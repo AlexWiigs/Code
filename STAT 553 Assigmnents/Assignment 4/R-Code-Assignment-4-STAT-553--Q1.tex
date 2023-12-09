@@ -1,0 +1,237 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Q3 - A1 - STAT 553},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Q3 - A1 - STAT 553}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Load the dataset and delete the first (redundant) indexing column}
+
+
+\NormalTok{fish\_data }\OtherTok{\textless{}{-}} \FunctionTok{read.table}\NormalTok{(}\StringTok{"/Users/alexwiigs/Documents/Code/STAT 553 Assigmnents/Assignment 4/T6\_17\_FISH.DAT"}\NormalTok{)}
+
+\FunctionTok{colnames}\NormalTok{(fish\_data) }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{"method"}\NormalTok{,}\StringTok{"y1"}\NormalTok{,}\StringTok{"y2"}\NormalTok{,}\StringTok{"y3"}\NormalTok{,}\StringTok{"y4"}\NormalTok{)}
+
+\FunctionTok{matrix}\NormalTok{(}\FunctionTok{aggregate}\NormalTok{(. }\SpecialCharTok{\textasciitilde{}}\NormalTok{ method, }\AttributeTok{data=}\NormalTok{fish\_data, }\AttributeTok{FUN=}\NormalTok{mean))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1]     
+## [1,] integer,3
+## [2,] numeric,3
+## [3,] numeric,3
+## [4,] numeric,3
+## [5,] numeric,3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\AttributeTok{y\_overall\_bar =} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{colMeans}\NormalTok{(fish\_data))[}\DecValTok{2}\SpecialCharTok{:}\DecValTok{5}\NormalTok{,])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5.205556 5.266667 5.552778 6.030556
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\AttributeTok{y\_i\_bar =} \FunctionTok{as.matrix}\NormalTok{(}\FunctionTok{aggregate}\NormalTok{(. }\SpecialCharTok{\textasciitilde{}}\NormalTok{ method, }\AttributeTok{data=}\NormalTok{fish\_data, }\AttributeTok{FUN=}\NormalTok{mean), }\AttributeTok{nrow=}\DecValTok{3}\NormalTok{, }\AttributeTok{byrow=}\ConstantTok{TRUE}\NormalTok{)[,}\DecValTok{2}\SpecialCharTok{:}\DecValTok{5}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            y1       y2       y3       y4
+## [1,] 5.383333 5.733333 5.441667 5.983333
+## [2,] 5.258333 5.233333 5.308333 5.875000
+## [3,] 4.975000 4.833333 5.908333 6.233333
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\AttributeTok{y\_i =} \FunctionTok{as.matrix}\NormalTok{(fish\_data)[,}\DecValTok{2}\SpecialCharTok{:}\DecValTok{5}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        y1  y2  y3  y4
+##  [1,] 5.4 6.0 6.3 6.7
+##  [2,] 5.2 6.5 6.0 5.8
+##  [3,] 6.1 5.9 6.0 7.0
+##  [4,] 4.8 5.0 4.9 5.0
+##  [5,] 5.0 5.7 5.0 6.5
+##  [6,] 5.7 6.1 6.0 6.6
+##  [7,] 6.0 6.0 5.8 6.0
+##  [8,] 4.0 5.0 4.0 5.0
+##  [9,] 5.7 5.4 4.9 5.0
+## [10,] 5.6 5.2 5.4 5.8
+## [11,] 5.8 6.1 5.2 6.4
+## [12,] 5.3 5.9 5.8 6.0
+## [13,] 5.0 5.3 5.3 6.5
+## [14,] 4.8 4.9 4.2 5.6
+## [15,] 3.9 4.0 4.4 5.0
+## [16,] 4.0 5.1 4.8 5.8
+## [17,] 5.6 5.4 5.1 6.2
+## [18,] 6.0 5.5 5.7 6.0
+## [19,] 5.2 4.8 5.4 6.0
+## [20,] 5.3 5.1 5.8 6.4
+## [21,] 5.9 6.1 5.7 6.0
+## [22,] 6.1 6.0 6.1 6.2
+## [23,] 6.2 5.7 5.9 6.0
+## [24,] 5.1 4.9 5.3 4.8
+## [25,] 4.8 5.0 6.5 7.0
+## [26,] 5.4 5.0 6.0 6.4
+## [27,] 4.9 5.1 5.9 6.5
+## [28,] 5.7 5.2 6.4 6.4
+## [29,] 4.2 4.6 5.3 6.3
+## [30,] 6.0 5.3 5.8 6.4
+## [31,] 5.1 5.2 6.2 6.5
+## [32,] 4.8 4.6 5.7 5.7
+## [33,] 5.3 5.4 6.8 6.6
+## [34,] 4.6 4.4 5.7 5.6
+## [35,] 4.5 4.0 5.0 5.9
+## [36,] 4.4 4.2 5.6 5.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{H }\OtherTok{=} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{16}\NormalTok{), }\AttributeTok{nrow=}\DecValTok{4}\NormalTok{)}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{) \{}
+\NormalTok{H }\OtherTok{\textless{}{-}}\NormalTok{ H }\SpecialCharTok{+}\NormalTok{ (y\_i\_bar[i,] }\SpecialCharTok{{-}}\NormalTok{ y\_overall\_bar )}\SpecialCharTok{\%*\%} \FunctionTok{t}\NormalTok{(y\_i\_bar[i,] }\SpecialCharTok{{-}}\NormalTok{ y\_overall\_bar)}
+\NormalTok{\}}
+
+\DecValTok{12}\SpecialCharTok{*}\NormalTok{ H}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##              y1        y2        y3         y4
+## [1,]  1.0505556  2.173333 -1.375556 -0.7602778
+## [2,]  2.1733333  4.880000 -2.373333 -1.2566667
+## [3,] -1.3755556 -2.373333  2.382222  1.3844444
+## [4,] -0.7602778 -1.256667  1.384444  0.8105556
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{E }\OtherTok{=} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{16}\NormalTok{), }\AttributeTok{nrow=}\DecValTok{4}\NormalTok{)}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{) \{}
+  \ControlFlowTok{for}\NormalTok{ (j }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:} \DecValTok{12}\NormalTok{)\{}
+\NormalTok{E }\OtherTok{\textless{}{-}}\NormalTok{ E }\SpecialCharTok{+}\NormalTok{ (y\_i[j,] }\SpecialCharTok{{-}}\NormalTok{ y\_i\_bar[i,] )}\SpecialCharTok{\%*\%} \FunctionTok{t}\NormalTok{(y\_i[j,] }\SpecialCharTok{{-}}\NormalTok{ y\_i\_bar[i,])}
+\NormalTok{\}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+
+\end{document}

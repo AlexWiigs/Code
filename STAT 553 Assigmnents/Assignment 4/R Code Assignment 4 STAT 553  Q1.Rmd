@@ -1,0 +1,43 @@
+---
+title: "Q3 - A1 - STAT 553"
+output:
+  pdf_document:
+    keep_tex: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+#Load the dataset and delete the first (redundant) indexing column
+
+
+fish_data <- read.table("/Users/alexwiigs/Documents/Code/STAT 553 Assigmnents/Assignment 4/T6_17_FISH.DAT")
+
+colnames(fish_data) = c("method","y1","y2","y3","y4")
+
+matrix(aggregate(. ~ method, data=fish_data, FUN=mean))
+
+(y_overall_bar = matrix(colMeans(fish_data))[2:5,])
+(y_i_bar = as.matrix(aggregate(. ~ method, data=fish_data, FUN=mean), nrow=3, byrow=TRUE)[,2:5])
+(y_i = as.matrix(fish_data)[,2:5])
+
+H = matrix(rep(0,16), nrow=4)
+for (i in 1:3) {
+H <- H + (y_i_bar[i,] - y_overall_bar )%*% t(y_i_bar[i,] - y_overall_bar)
+}
+
+12* H
+
+
+
+
+E = matrix(rep(0,16), nrow=4)
+for (i in 1:3) {
+  for (j in 1: 12){
+E <- E + (y_i[j,] - y_i_bar[i,] )%*% t(y_i[j,] - y_i_bar[i,])
+}
+}
+```
